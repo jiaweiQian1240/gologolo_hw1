@@ -90,7 +90,17 @@ export default class AppsterController {
         console.log("processCreateNewWork");
 
         // PROMPT FOR THE NAME OF THE NEW LIST
-        
+        let name = prompt("Please enter new name...");
+        while(!name) {
+            if(name === null) {
+                alert("user cancelled...")
+                
+            } else if(name.length === 0) {
+                    alert("rejected");
+             } 
+         name = prompt("Please enter new name...");
+        }
+        alert(name);
         // MAKE A BRAND NEW LIST
         this.model.goList();
     }
